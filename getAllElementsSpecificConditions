@@ -1,0 +1,18 @@
+const elms_ = document.querySelectorAll("*");
+const arr = [];
+
+const elms = [...elms_, document, window];
+
+const func = (elm) => {
+  const events = getEventListeners(elm);
+  
+  for(let key in events){
+    if(key.includes("scroll")){
+      arr.push(elm);
+    }
+  }
+};
+
+elms.forEach(func);
+
+console.log(arr);
