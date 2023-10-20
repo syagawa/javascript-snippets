@@ -3,7 +3,7 @@ const arr = [];
 
 const elms = [...elms_, document, window];
 
-const func = (elm) => {
+const callback = (elm) => {
   const events = getEventListeners(elm);
   
   for(let key in events){
@@ -13,6 +13,6 @@ const func = (elm) => {
   }
 };
 
-elms.forEach(func);
+elms.forEach(callback);
 
 console.log(arr);
