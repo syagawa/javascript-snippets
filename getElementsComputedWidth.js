@@ -1,16 +1,13 @@
-onst elms_ = document.querySelectorAll("*");
+const elms_ = document.querySelectorAll("*");
 const arr = [];
-
 const elms = [...elms_, document, window];
+const targetWidth = 1000;
 
 const callback = (elm) => {
-   for(const [prop, val] of elm.computedStyleMap()){
-     // console.log(prop,val)
-     if(prop === "width"){
-       if(val[0].unit === "px" && val[0].value > 1000){
-         console.log(elm, val[0].value);
-       }
-     }
+   const cw = elm.clientWidth;
+   if(cw > targetWidth){
+       const cssw = elm.computedStyleMap().get("width");
+       console.log(elm, "width:", cw, cssw);
    }
 };
 
