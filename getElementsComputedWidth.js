@@ -1,3 +1,4 @@
+// run in browser console
 (function(){
 
     const elms_ = document.querySelectorAll("*");
