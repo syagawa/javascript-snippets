@@ -4,7 +4,7 @@
     const elms_ = document.querySelectorAll("*");
     const arr = [];
     const elms = [...elms_, document, window];
-    const targetWidth = window.innerWidth;
+    const targetWidth = window.outerWidth < window.innerWidth ? window.outerWidth : window.innerWidth;
     
     const callback = (elm) => {
         const cw = elm.clientWidth;
