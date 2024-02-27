@@ -10,9 +10,13 @@
           return;
         }
         const rect = elm.getBoundingClientRect()
-        if(rect.left < 0 || rect.right > targetWidth){
-            console.log(elm, `left: ${rect.left}px, right:${rect.right}`);
+        if(rect.left < 0){
+            console.log(elm, "left", `left: ${rect.left}px, right:${rect.right}px`);
         }
+        if(rect.right > targetWidth){
+            console.log(elm, "right", `left: ${rect.left}px, right:${rect.right}px`);
+        }
+
     };
     
     elms.forEach(callback);
