@@ -1,3 +1,4 @@
+// node.js
 const os = require("os")
 
 const getIps = (family) => {
