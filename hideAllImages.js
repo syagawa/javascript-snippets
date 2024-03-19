@@ -6,4 +6,5 @@
     };
     document.querySelectorAll("img").forEach((e)=>{hideElement(e)});
     document.querySelectorAll("*[class*=img]").forEach((e)=>{hideElement(e)});
+    document.querySelectorAll("svg").forEach((e)=>{hideElement(e)});
 })();
