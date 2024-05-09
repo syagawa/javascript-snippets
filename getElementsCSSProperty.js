@@ -6,6 +6,9 @@
     const elms = [...elms_, document, window];
     const callback = (elm) => {
         try{
+            if(!elm.checkVisibility()){
+                return;
+            }
             const target = elm.computedStyleMap().get(targetProperty);
             const value = target.value;
             if(value){
