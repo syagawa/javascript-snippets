@@ -1,7 +1,7 @@
 // run in browser console
 (function(){
-    const targetProperty = "z-index";
-    const excludeValues = ["auto"];
+    const targetProperty = "margin";
+    const excludeValues = ["0px"];
     const elms_ = document.querySelectorAll("*");
     const elms = [...elms_, document, window];
     const callback = (elm) => {
@@ -10,7 +10,7 @@
                 return;
             }
             const target = elm.computedStyleMap().get(targetProperty);
-            const value = target.value;
+            const value = target.toString()
             if(value){
                 if(excludeValues.includes(value)){
                     return;
