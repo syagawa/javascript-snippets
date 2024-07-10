@@ -1,10 +1,10 @@
 // run in browser console
-(function(){
+(function(targetWidth){
 
     const elms_ = document.querySelectorAll("*");
     const arr = [];
     const elms = [...elms_, document, window];
-    const targetWidth = 1000;
+    targetWidth = targetWidth ? targetWidth : 1000;
     
     const callback = (elm) => {
         const cw = elm.clientWidth;
@@ -16,4 +16,4 @@
     };
     
     elms.forEach(callback);
-})();
+})(1000);
