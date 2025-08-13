@@ -1,4 +1,4 @@
-(async () => {
+(async (len) => {
   const start = async(length) => {
     if(!length){
       length = 5000;
@@ -44,5 +44,5 @@
     }
   }
 
-  start(30000);
-})();
+  start(len);
+})(10000);
