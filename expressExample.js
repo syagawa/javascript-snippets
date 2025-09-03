@@ -9,6 +9,16 @@ const port = 3000
 
 app.use(express.static("public"))
 
+// app.get('/:name.html', (req, res, next) => {
+//   const filePath = path.join("html directory path", req.path);
+//   res.sendFile(filePath, (err) => {
+//     if (err) {
+//       //fallback to static if not exists file
+//       next()
+//     }
+//   })
+// })
+
 app.listen(port, () => {
   console.log(`Start app on port ${port}`)
 })
