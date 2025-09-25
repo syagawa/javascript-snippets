@@ -1,5 +1,5 @@
 // from
-// {abc: "abc", def: 123}
+// {abc: \"abc\", def: 123}
 // to
 // {
 //   abc: "abc",
@@ -7,7 +7,7 @@
 // }
 (async function(){
   const s1 = await navigator.clipboard.readText();
-  const o = JSON.parse(s1);
+  const o = JSON.parse(s1.replace(/\\"/g, '"'));
   const s = JSON.stringify(o, null, 2);
   navigator.clipboard.writeText(s);
 })();
