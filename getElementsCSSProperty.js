@@ -1,7 +1,14 @@
 // run in browser console
-(function(){
-    const targetProperty = "margin";
-    const excludeValues = ["0px"];
+(function(target, excludes){
+    let targetProperty = "margin";
+    let excludeValues = ["0px"];
+    if(target){
+      targetProperty = target;
+    }
+    if(excludes){
+      excludeValues = excludes;
+    }
+
     const elms_ = document.querySelectorAll("*");
     const elms = [...elms_, document, window];
     const callback = (elm) => {
@@ -21,4 +28,4 @@
         }
     };
     elms.forEach(callback);
-})();
+})("background-image", ["none"]);
